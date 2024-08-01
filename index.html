@@ -1,85 +1,37 @@
-<!DOCTYPE html>
-
-<html lang="ja">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>湯婆婆みたいなサイト</title>
-
 <style>
-
-body {
-
-    font-size:20px;
-
-    text-align: center;
-
-    background-color: #ECC539;
-
-}
-
-</style>
-
+        body {
+            font-size: 20px;
+            text-align: center;
+            background-color: #ECC539;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container-fluid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .content {
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
-
 <body>
-
-<h1>湯婆婆みたいなサイト</h1>
-
-<img src="Yubaba.jpg" width="720" height="390">
-
-<p>ここに名前を入力するんだね</p>
-
-<p><input type="text" value="荻野千尋" id="your_name" size="15" ></p>
-
-<p><input type="button" value="湯婆婆る" onclick="clicked()"></p>
-
-<div id="output"></div>
-
-<script>
-
-//JSで書かれてるよ〜〜〜〜
-
-let your_name = "荻野千尋";
-let random = 0;
-let yuba_name = "千"
-let output = ""
-
-//これは変数の初期値設定
-
-function clicked() {
-
-    //これはボタンが押された時に発火する関数の設定
-    
-        your_name = document.getElementById("your_name").value;
-
-        //これはテキストボックスに書かれた値を取得してyour_nameに設定するコード。
-
-        if (your_name.length >= 1) {
-
-            output = document.getElementById("output");
-
-            random = Math.floor(Math.random() * your_name.length);
-            yuba_name = your_name.substring(random,random + 1);
-
-            //これはrandomで1からyour_nameの文字数の間のランダムな整数を取得するコードと、your_nameのrandom文字目を抽出してyuba_nameに設定するコード。
-
-            output.innerHTML = "贅沢な名だね！今日からお前の名前は「" + yuba_name + "」だよ！";
-
-        }
-        else {
-            output.innerHTML = "ちゃんと名前を入力するんだよ！";
-        }
-        
-        
-    }
-
-</script>
-
-</body>
-
-</html>
+    <div class="container-fluid">
+        <div class="content">
+            <h1>湯婆婆みたいなサイト</h1>
+            <img src="Yubaba.jpg" alt="Yubaba Image">
+            <h3>ここに名前を入力するんだね</h3>
+            <p><input type="text" value="荻野千尋" id="your_name" size="15"></p>
+            <p><input type="button" value="湯婆婆る" onclick="clicked()"></p>
+            <div id="output"></div>
+        </div>
+    </div>
